@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>elycharts</artifactId>
-    <version>2.1.5-SNAPSHOT</version>
+    <version>2.1.5</version>
     <name>elycharts</name>
     <description>WebJar for elycharts</description>
     <url>http://webjars.org</url>
@@ -50,7 +50,7 @@
         <url>http://github.com/webjars/elycharts</url>
         <connection>scm:git:https://github.com/webjars/elycharts.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/elycharts.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>elycharts-2.1.5</tag>
     </scm>
     
     <build>
@@ -65,13 +65,13 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="download archive"/>
-                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip"/>
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
-                                <echo message="moving resources"/>
+                                <echo message="download archive" />
+                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip" />
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/${project.artifactId}-${upstream.version}/dist"/>
+                                    <fileset dir="${project.build.directory}/${project.artifactId}-${upstream.version}/dist" />
                                 </move>
                             </target>
                         </configuration>
